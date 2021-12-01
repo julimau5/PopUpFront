@@ -1,0 +1,7 @@
+{
+  "name": "PopUpOffice",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
