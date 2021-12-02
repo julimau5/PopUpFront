@@ -11,7 +11,7 @@ import { AddImageModalPage } from '../modals/add-image-modal/add-image-modal.pag
 export class HomePage implements OnInit{
 
   imgButtons = [ ]
-
+  test ="HOLA JULI"
   constructor(
     public modalController: ModalController,
     ) {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pop-up-card',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pop-up-card.component.scss'],
 })
 export class PopUpCardComponent implements OnInit {
+
+  @Input() nombre: any;
 
   constructor() { }
 
