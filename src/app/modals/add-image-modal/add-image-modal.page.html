@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title (click)="dismissModal()">addImageModal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="imgForm" (ngSubmit)="submitImgForm()">
+    <label for="url"> URL</label>
+    <input type="text" id="url" formControlName="url">
+    <label for="beschreibung"> Beschreibung </label>
+    <input type="text" id="beschreibung" formControlName="beschreibung">
+    <ion-button type="submit" [disabled]="!imgForm.valid"> Los! </ion-button>
+  </form>
+
+
+</ion-content>

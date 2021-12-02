@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      PopUp Office :)
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,19 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">PopUp Office</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="background">
+    <img src="../../assets/background/background_1.webp" (click)="addImage($event)">
+  </div>
+
+  <div *ngFor="let button  of imgButtons" class="image-button" [style.top]="button.y" [style.left]="button.x">
+    <button></button>
+    <div>
+      <h1>HOLA MUNDO Cruel</h1>
+      <h2>HOLA MUNDO URL</h2>
+    </div>
   </div>
 </ion-content>
