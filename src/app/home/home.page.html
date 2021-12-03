@@ -1,6 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> PopUp Office :) </ion-title>
+    <ion-title> Geht durch die Punkte :) </ion-title>
+    <ion-button *ngIf="userState != null" (click)="singOut()" slot="end">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="userState == null" (click)="toLogIn()" slot="end">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 

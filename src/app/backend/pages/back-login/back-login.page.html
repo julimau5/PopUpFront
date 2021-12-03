@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Hast du schon ein Konto?</ion-card-subtitle>
+      <ion-card-title>Kommt gerne rein.</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="loginForm">
+        <ion-item>
+          <ion-input
+            placeholder="Dein E-Mail"
+            formControlName="email"
+            autofocus="true"
+            clearInput="true"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            placeholder="Dein Password"
+            type="password"
+            formControlName="password"
+            clearInput="true"
+          ></ion-input>
+        </ion-item>
+      </form>
+
+      <ion-button (click)="mailLogin()" expand="block">Gehen wir!</ion-button>
+    </ion-card-content>
+    <ion-footer class="ion-text-center">
+
+    </ion-footer>
+  </ion-card>
+</ion-content>
