@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AddImageModalPage } from '../modals/add-image-modal/add-image-modal.page';
 
@@ -10,13 +10,15 @@ import { AddImageModalPage } from '../modals/add-image-modal/add-image-modal.pag
 })
 export class HomePage implements OnInit{
 
-  imgButtons = [ ]
-  test ="HOLA JULI"
+  public innerWidth: any;
+  public imgButtons = [ ]
+
   constructor(
     public modalController: ModalController,
     ) {}
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
   }
 
   async addImage(e){
@@ -33,6 +35,11 @@ export class HomePage implements OnInit{
 
   addNewButton(button) {
     this.imgButtons.push(button)
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 
 }

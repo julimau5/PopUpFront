@@ -1,18 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title (click)="dismissModal()">addImageModal</ion-title>
+    <ion-title>Hier kannst du ein neues Bild hinzufügen :)</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <form [formGroup]="imgForm" (ngSubmit)="submitImgForm()">
-    <label for="url"> URL</label>
-    <input type="text" id="url" formControlName="url">
-    <label for="beschreibung"> Beschreibung </label>
-    <input type="text" id="beschreibung" formControlName="beschreibung">
-    <ion-button type="submit" [disabled]="!imgForm.valid"> Los! </ion-button>
-  </form>
-
-
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="imgForm" >
+        <ion-item>
+          <ion-label>Titel</ion-label>
+          <ion-input type="text" id="title" placeholder="Titel" formControlName="title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Url</ion-label>
+          <ion-input type="text" id="url" placeholder="Url" formControlName="url"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Beschreibung</ion-label>
+          <ion-input type="text" id="description" placeholder="Beschreibung" formControlName="description"></ion-input>
+        </ion-item>
+        <ion-button (click)="submitImgForm()" [disabled]="!imgForm.valid"> Bild hinzufügen </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

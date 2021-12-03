@@ -11,6 +11,10 @@ export class PopUpCardComponent implements OnInit {
 
   constructor() { }
 
+  @Input() cardTitle: string;
+  @Input() imageUrl: string;
+  @Input() cardDescription: string;
+
   ngOnInit() {}
 
 }

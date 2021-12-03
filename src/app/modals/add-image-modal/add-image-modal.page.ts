@@ -11,8 +11,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AddImageModalPage implements OnInit {
   imgForm: any;
 
-  @Input() pointX: Number;
-  @Input() pointY: Number;
+  @Input() pointX: number;
+  @Input() pointY: number;
   @Input() homePage: any;
 
   constructor(
@@ -20,8 +20,9 @@ export class AddImageModalPage implements OnInit {
     private fb: FormBuilder
   ) {
     this.imgForm = this.fb.group({
+      title: ['', Validators.required],
       url: ['', Validators.required],
-      beschreibung: ['', Validators.required],
+      description: ['', Validators.required],
     });
   }
 
@@ -32,13 +33,25 @@ export class AddImageModalPage implements OnInit {
     console.log(this.pointX);
     console.log(this.pointY);
     var button = {
+      title: this.imgForm.value.title,
       url: this.imgForm.value.url,
-      beschreibung: this.imgForm.value.beschreibung,
-      x: this.pointX + 'px',
-      y: this.pointY + 'px',
+      description: this.imgForm.value.description,
+      x: this.getXPosition(this.pointX) + '%',
+      y: this.getYPosition(this.pointY) + 'vw',
     };
     this.homePage.addNewButton( button );
     this.dismissModal();
+  }
+
+  getXPosition( x: number ) {
+    let actualWidth: number = this.homePage.innerWidth;
+    let xProportion = (100 / actualWidth) * x;
+    return  xProportion
+  }
+
+  getYPosition( y: number ) {
+    let yProportion = (100 / this.homePage.innerWidth) * y;
+    return  yProportion
   }
 
   dismissModal() {

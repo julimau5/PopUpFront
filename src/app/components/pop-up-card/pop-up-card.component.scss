@@ -1,0 +1,23 @@
+.added-button {
+  background-color: rgba(2, 168, 146, 0.87);
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border-color: rgb(221, 151, 0);
+  border-width: 2px;
+  margin-left: -10px;
+}
+.pop-up-card {
+  width: 150px;
+  max-height: 220px;
+  display: none;
+  ion-card-title {
+      text-align: center;
+      font-size: 20px;
+      color: orange;
+  }
+}
+
+.added-button:hover + .pop-up-card {
+  display: block;
+}
