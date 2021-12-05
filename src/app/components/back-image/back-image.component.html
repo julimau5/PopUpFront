@@ -1,0 +1,18 @@
+<div class="background">
+  <img src="../../assets/background/background_1.webp" />
+</div>
+
+<div
+  *ngFor="let button of imgButtons"
+  class="image-button"
+  [style.top]="button.y"
+  [style.left]="button.x"
+>
+  <pop-up-card
+    class="pop-card"
+    [cardTitle]="button.title"
+    [imageUrl]="button.url"
+    [cardDescription]="button.description"
+  >
+  </pop-up-card>
+</div>

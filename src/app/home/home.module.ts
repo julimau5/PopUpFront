@@ -6,8 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-import { PopUpCardComponent } from '../components/pop-up-card/pop-up-card.component';
-
+import { BackAdminMainPageModule } from '../backend/pages/back-admin-main/back-admin-main.module';
 
 @NgModule({
   imports: [
@@ -16,7 +15,8 @@ import { PopUpCardComponent } from '../components/pop-up-card/pop-up-card.compon
     IonicModule,
     HomePageRoutingModule,
     ReactiveFormsModule,
+    BackAdminMainPageModule
   ],
-  declarations: [HomePage, PopUpCardComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

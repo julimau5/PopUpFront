@@ -23,7 +23,7 @@ export class BackLoginPage implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -35,7 +35,7 @@ export class BackLoginPage implements OnInit {
     this.fireAuthService.singInWithEmail(this.loginForm.value).then(
       (user) => {
         loading.dismiss();
-        this.router.navigateByUrl('/home', { replaceUrl: true });
+        this.router.navigateByUrl('/back-admin-main', { replaceUrl: true });
       },
       async (err) => {
         loading.dismiss();

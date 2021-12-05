@@ -10,6 +10,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -17,23 +18,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="background">
-    <img
-      src="../../assets/background/background_1.webp"
-      (click)="addImage($event)"
-    />
-  </div>
 
-  <div *ngFor="let button  of imgButtons" class="image-button"
-    [style.top]="button.y"
-    [style.left]="button.x"
-  >
-    <pop-up-card
-      class="pop-card"
-      [cardTitle]="button.title"
-      [imageUrl]="button.url"
-      [cardDescription]="button.description"
-    >
-    </pop-up-card>
-  </div>
+  <back-image></back-image>
+
 </ion-content>

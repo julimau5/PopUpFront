@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>back_admin_main</ion-title>
+    <ion-title>Admin</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">PopUp Office</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <back-image (click)="addImage($event)"></back-image>
+   <ion-row *ngFor="let button of imgButtons | async">
+     <b>{{ button.description }}</b>
+     <b>{{ button.title }}</b>
+   </ion-row>
+
 </ion-content>
+
+

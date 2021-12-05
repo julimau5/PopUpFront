@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 import { FormBuilder, Validators } from '@angular/forms';
@@ -9,24 +9,27 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./add-image-modal.page.scss'],
 })
 export class AddImageModalPage implements OnInit {
-  imgForm: any;
+  public imgForm: any;
+  public innerWidth: any;
 
   @Input() pointX: number;
   @Input() pointY: number;
-  @Input() homePage: any;
+  @Input() backImageComp: any;
 
   constructor(
     public modalController: ModalController,
     private fb: FormBuilder
-  ) {
-    this.imgForm = this.fb.group({
-      title: ['', Validators.required],
-      url: ['', Validators.required],
-      description: ['', Validators.required],
-    });
-  }
+    ) {
+      this.imgForm = this.fb.group({
+        title: ['', Validators.required],
+        url: ['', Validators.required],
+        description: ['', Validators.required],
+      });
+    }
 
-  ngOnInit() {}
+    ngOnInit() {
+      this.innerWidth = window.innerWidth;
+    }
 
   submitImgForm() {
     console.log(this.imgForm.value);
@@ -39,18 +42,18 @@ export class AddImageModalPage implements OnInit {
       x: this.getXPosition(this.pointX) + '%',
       y: this.getYPosition(this.pointY) + 'vw',
     };
-    this.homePage.addNewButton( button );
+    this.backImageComp.addNewButton( button );
     this.dismissModal();
   }
 
   getXPosition( x: number ) {
-    let actualWidth: number = this.homePage.innerWidth;
+    let actualWidth: number = this.innerWidth;
     let xProportion = (100 / actualWidth) * x;
     return  xProportion
   }
 
   getYPosition( y: number ) {
-    let yProportion = (100 / this.homePage.innerWidth) * y;
+    let yProportion = (100 / this.innerWidth) * y;
     return  yProportion
   }
 
@@ -58,5 +61,10 @@ export class AddImageModalPage implements OnInit {
     this.modalController.dismiss({
       dismissed: true,
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 }
