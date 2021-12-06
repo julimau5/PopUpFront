@@ -14,13 +14,13 @@
         </ion-item>
         <ion-item>
           <ion-label>Url</ion-label>
-          <ion-input type="text" id="url" placeholder="Url" formControlName="url"></ion-input>
+          <ion-input type="file" id="file" (change)="uploadFile($event)"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Beschreibung</ion-label>
           <ion-input type="text" id="description" placeholder="Beschreibung" formControlName="description"></ion-input>
         </ion-item>
-        <ion-button (click)="submitImgForm()" [disabled]="!imgForm.valid"> Bild hinzufügen </ion-button>
+        <ion-button (click)="submitImgForm()" [disabled]="(!uploadFinished )"> Bild hinzufügen </ion-button>
       </form>
     </ion-card-content>
   </ion-card>

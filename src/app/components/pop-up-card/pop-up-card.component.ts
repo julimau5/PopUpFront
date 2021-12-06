@@ -15,6 +15,7 @@ export class PopUpCardComponent implements OnInit {
   @Input() imageUrl: string;
   @Input() cardDescription: string;
 
+
   ngOnInit() {}
 
 }

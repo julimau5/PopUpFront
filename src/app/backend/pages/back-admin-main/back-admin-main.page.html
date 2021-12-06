@@ -13,10 +13,6 @@
   </ion-header>
 
   <back-image (click)="addImage($event)"></back-image>
-   <ion-row *ngFor="let button of imgButtons | async">
-     <b>{{ button.description }}</b>
-     <b>{{ button.title }}</b>
-   </ion-row>
 
 </ion-content>
 

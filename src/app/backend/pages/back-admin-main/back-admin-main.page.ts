@@ -45,13 +45,6 @@ export class BackAdminMainPage implements OnInit {
     }
   }
 
-  addNewButton(button) {
-    // this.imgButtons.push(button)
-  }
 
-  showButtons() {
-
-    console.log(this.imgButtons)
-  }
 
 }

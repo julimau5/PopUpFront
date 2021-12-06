@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FireauthService } from '../../backend/services/authentication/fireauth.service';
-// import { FiredataService } from 'src/app/backend/services/datamanagement/firedata.service';
+import { FiredataService } from 'src/app/backend/services/datamanagement/firedata.service';
+import { Observable } from 'rxjs';
+
+import { Image } from '../../backend/Interfaces/image.module';
+
 
 @Component({
   selector: 'back-image',
@@ -11,16 +14,17 @@ import { FireauthService } from '../../backend/services/authentication/fireauth.
 export class BackImageComponent implements OnInit {
 
   public userState: any;
-  public imgButtons: any;
+  public imgButtons: Observable<Image[]>;
 
   constructor(
-    private fireAuthService: FireauthService,
-    // private savedData; FiredataService,
+    private fireDB: FiredataService,
   ) { }
 
   ngOnInit() {
-    this.userState = this.fireAuthService.currentUser;
+    this.imgButtons = this.fireDB.getImages();
   }
+
+
 
 
 

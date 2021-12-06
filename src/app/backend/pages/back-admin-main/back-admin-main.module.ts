@@ -8,8 +8,10 @@ import { BackAdminMainPageRoutingModule } from './back-admin-main-routing.module
 
 import { BackAdminMainPage } from './back-admin-main.page';
 
+//Custom Components
 import { PopUpCardComponent } from '../../../components/pop-up-card/pop-up-card.component';
 import { BackImageComponent } from '../../../components/back-image/back-image.component';
+
 
 @NgModule({
   imports: [

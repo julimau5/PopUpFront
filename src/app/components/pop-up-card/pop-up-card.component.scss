@@ -11,10 +11,14 @@
   width: 150px;
   max-height: 220px;
   display: none;
+  z-index: 5;
   ion-card-title {
       text-align: center;
       font-size: 20px;
       color: orange;
+  }
+  .card-image{
+    max-height: 150px;
   }
 }
 

@@ -3,16 +3,16 @@
 </div>
 
 <div
-  *ngFor="let button of imgButtons"
+  *ngFor="let button of imgButtons | async"
   class="image-button"
-  [style.top]="button.y"
-  [style.left]="button.x"
+  [style.top]="button.image.y"
+  [style.left]="button.image.x"
 >
   <pop-up-card
     class="pop-card"
-    [cardTitle]="button.title"
-    [imageUrl]="button.url"
-    [cardDescription]="button.description"
+    [cardTitle]="button.image.title"
+    [imageUrl]="button.image.url"
+    [cardDescription]="button.image.description"
   >
   </pop-up-card>
 </div>
